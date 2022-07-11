@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "44e2a2c7-52af-4eca-9638-370adeda75af",
+		"name": "Crypto Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21889727"
+	},
+	"item": [
+		{
+			"name": "Crypto Get Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "postman://auth/callback?code=e79cc1c33dfffe6c53121ff253fc5f1de61e8704c7a031b8eaf211f6487b42a5",
+					"protocol": "postman",
+					"host": [
+						"auth"
+					],
+					"path": [
+						"callback"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "e79cc1c33dfffe6c53121ff253fc5f1de61e8704c7a031b8eaf211f6487b42a5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Push And Recalculate Without Encryption",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "100000000",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/crypto/pushAndRecalculate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crypto",
+						"pushAndRecalculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Push And Recalculate And Encrypt",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "9223372036854775807",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/crypto/pushAndRecalculateAndEncrypt",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crypto",
+						"pushAndRecalculateAndEncrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrypt",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

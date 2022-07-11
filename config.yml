@@ -1,0 +1,6 @@
+logging:
+  level: INFO
+  loggers:
+    apple: DEBUG
+description: A not so useful crypto service by %s
+creator: Hannah Lee
