@@ -1,40 +1,36 @@
-# CryptoService
+Project: CryptoService
+======================
 
 How to start the CryptoService application
----
+------------------------------------------
 
 1. Run `mvn clean install` to build your application
-1. Start application with `java -jar target/dummy-crypto-service-1.0-SNAPSHOT.jar server config.yml`
-1. To check that your application is running enter url `http://localhost:8080`
+2. Start application with `java -jar target/dummy-crypto-service-1.0-SNAPSHOT.jar server config.yml`
+3. To check that your application is running enter url `http://localhost:8080`
 
 Health Check
----
+------------
 
 To see your application's health enter url `http://localhost:8081/healthcheck`
 
-## How to use the API Locally
+How to use the API Locally
+--------------------------
 API is easy to interact with using Postman (https://www.postman.com/downloads/).
 Import the Postman Collection `Crypto Service.postman_collection.json` from the root directory, and you will see 2 GETs, and 2 PUTs.
 1. GET - `localhost:8080/crypto` (home path)
 
-![](public/getInfo.png)
-
 2. GET - `localhost:8080/crypto/decrypt`
     1. Under `Body`, select `raw` and `Text`. Use this path so decrypt any encrypted stats you with you view.
-
-![](public/decrypt.png)
 
 3. PUT - `localhost:8080/crypto/pushAndRecalculate`
     1. Under `Body`, select `raw` and `JSON`. Type in any valid Long numbers as an input.
 
-![](public/push.png)
-
 4. PUT - `localhost:8080/crypto/pushAndRecalculateAndEncrypt`
     1. Under `Body`, select `raw` and `JSON`. Type in any valid Long numbers as an input.
 
-![](public/pushEncrypt.png)
 
-## Assumptions & Decisions
+Assumptions & Decisions
+-----------------------
 1. Input numbers are integers, as shown in the example. The application uses Long as the integer format. For the actual calculations, the numbers are transformed into BigDecimals.
 2. All decimals are rounded half-up to 3 digits, but the full BigDecimal scale is used in the backend calculations.
 3. Negative numbers are allowed.
@@ -43,7 +39,8 @@ Import the Postman Collection `Crypto Service.postman_collection.json` from the 
 6. No authentications.
 7. Used AES (Advanced Encryption Standard) + CBC (Cipher Block Chaining) + PKCS 5 (Padding Algorithm) to adhere to industry standards.
 
-## Setup
+Setup
+-----
 Environment
 - Java 18.0.1.1
 
